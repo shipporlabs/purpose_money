@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "265908770386",
+    "project_id": "usepurposemoney",
+    "storage_bucket": "usepurposemoney.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:265908770386:android:b69418779a40ea52a8718b",
+        "android_client_info": {
+          "package_name": "com.example.purpose_money"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAzeHltQNBnpkAylIU6AqNMr4b5TKlteiQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
