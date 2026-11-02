@@ -1,0 +1,38 @@
+rules_version = '2';
+// Purpose Money security rules.
+// The app READS family data directly (real-time). Every money-moving or rule-changing WRITE
+// goes through the Cloudflare Worker, which uses a service account and bypasses these rules.
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    function signedIn() { return request.auth != null; }
+    function isFamilyMember(familyId) {
+      return signedIn() && request.auth.uid in get(/databases/$(database)/documents/families/$(familyId)).data.memberUids;
+    }
+
+    // A user may create and edit only their own profile, and only their display name.
+    // familyId and role are set by the Worker when they create or join a family.
+    match /users/{uid} {
+      allow read: if signedIn() && request.auth.uid == uid;
+      allow create: if signedIn() && request.auth.uid == uid
+        && request.resource.data.keys().hasOnly(['displayName', 'email', 'createdAt']);
+      allow update: if signedIn() && request.auth.uid == uid
+        && request.resource.data.diff(resource.data).affectedKeys().hasOnly(['displayName']);
+    }
+
+    match /families/{familyId} {
+      allow read: if signedIn() && request.auth.uid in resource.data.memberUids;
+      allow write: if false;
+
+      match /{sub=**} {
+        allow read: if isFamilyMember(familyId);
+        allow write: if false;
+      }
+    }
+
+    // Guardian keys. Never readable or writable from the app.
+    match /_secrets/{doc=**} {
+      allow read, write: if false;
+    }
+  }
+}
