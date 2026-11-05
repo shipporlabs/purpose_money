@@ -10,7 +10,12 @@ export type OneClickStatus =
 const BASE = 'https://1click.chaindefuser.com';
 
 export class OneClick {
-  constructor(private readonly apiKey: string | undefined, private readonly fetchImpl: typeof fetch = fetch) {}
+  // FIX: wrap global fetch so it is never invoked with `this` = the OneClick instance
+  // (a bare stored `fetch` throws "Illegal invocation" in Cloudflare Workers).
+  constructor(
+    private readonly apiKey: string | undefined,
+    private readonly fetchImpl: typeof fetch = (input, init) => fetch(input, init),
+  ) {}
 
   private headers(auth: boolean) {
     const h: Record<string, string> = { 'content-type': 'application/json' };

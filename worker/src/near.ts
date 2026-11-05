@@ -161,7 +161,12 @@ export class NearRpcError extends Error {
 export interface TxResult { hash: string; value: unknown; raw: any }
 
 export class NearClient {
-  constructor(readonly rpcUrl: string, private fetchImpl: typeof fetch = fetch) {}
+  // FIX: wrap global fetch so it is never invoked with `this` = the NearClient instance
+  // (a bare stored `fetch` throws "Illegal invocation" in Cloudflare Workers).
+  constructor(
+    readonly rpcUrl: string,
+    private fetchImpl: typeof fetch = (input, init) => fetch(input, init),
+  ) {}
 
   async rpc<T = any>(method: string, params: unknown): Promise<T> {
     const res = await this.fetchImpl(this.rpcUrl, {

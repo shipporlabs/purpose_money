@@ -77,7 +77,12 @@ let cachedToken: { token: string; exp: number; email: string } | null = null;
 
 export class Firestore {
   private readonly root: string;
-  constructor(private readonly sa: ServiceAccount, private readonly fetchImpl: typeof fetch = fetch) {
+  // FIX: wrap global fetch so it is never invoked with `this` = the Firestore instance
+  // (a bare stored `fetch` throws "Illegal invocation" in Cloudflare Workers).
+  constructor(
+    private readonly sa: ServiceAccount,
+    private readonly fetchImpl: typeof fetch = (input, init) => fetch(input, init),
+  ) {
     this.root = `projects/${sa.project_id}/databases/(default)/documents`;
   }
 

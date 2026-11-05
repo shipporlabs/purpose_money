@@ -4,7 +4,12 @@ export class PaystackError extends Error {
 }
 
 export class Paystack {
-  constructor(private readonly secretKey: string, private readonly fetchImpl: typeof fetch = fetch) {}
+  // FIX: wrap global fetch so it is never invoked with `this` = the Paystack instance
+  // (a bare stored `fetch` throws "Illegal invocation" in Cloudflare Workers).
+  constructor(
+    private readonly secretKey: string,
+    private readonly fetchImpl: typeof fetch = (input, init) => fetch(input, init),
+  ) {}
 
   get isTestMode() { return this.secretKey.startsWith('sk_test_'); }
 
