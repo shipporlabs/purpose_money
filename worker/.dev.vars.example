@@ -1,0 +1,14 @@
+# Copy to .dev.vars for `npm run dev` (local Worker). Never commit .dev.vars.
+FIREBASE_SERVICE_ACCOUNT={"type":"service_account","project_id":"your-project","client_email":"firebase-adminsdk-xxx@your-project.iam.gserviceaccount.com","private_key":"-----BEGIN PRIVATE KEY-----\n...\n-----END PRIVATE KEY-----\n"}
+PAYSTACK_SECRET_KEY=sk_test_xxxxxxxxxxx
+OPERATOR_ACCOUNT_ID=pm-operator-osas.testnet
+OPERATOR_PRIVATE_KEY=ed25519:xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+GUARDIAN_ACCOUNT_ID=pm-guardian-osas.testnet
+GUARDIAN_PRIVATE_KEY=ed25519:xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+# Optional: cross-chain funding through NEAR Intents (1Click API)
+# ONECLICK_API_KEY=
+# INTENTS_RECIPIENT=your-mainnet-account.near
+# Optional: plain-English guardian notes from any OpenAI-compatible endpoint
+# AI_BASE_URL=
+# AI_API_KEY=
+# AI_MODEL=

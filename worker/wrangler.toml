@@ -1,0 +1,15 @@
+name = "purpose-money-api"
+main = "src/index.ts"
+compatibility_date = "2026-10-01"
+
+# Non-secret settings. Secrets are set with `npx wrangler secret put NAME` (see README).
+[vars]
+NEAR_NETWORK = "testnet"
+NEAR_RPC_URL = "https://test.rpc.fastnear.com"
+SPUTNIK_FACTORY = "sputnikv2.testnet"
+DAO_CREATE_DEPOSIT_NEAR = "6"
+PROPOSAL_BOND_NEAR = "0.1"
+NGN_PER_USD = "1500"
+NEAR_USD_FALLBACK = "3"
+TESTNET_TOPUP_MAX_USD = "50"
+ALLOWED_ORIGIN = "*"
