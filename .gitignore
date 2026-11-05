@@ -1,22 +1,37 @@
-# Worker
+cat > .gitignore <<'EOF'
+# Cloudflare Worker
 worker/node_modules/
 worker/.wrangler/
 worker/.dev.vars
 worker/dist/
 
-# Flutter
-app/.dart_tool/
-app/build/
-app/.flutter-plugins
-app/.flutter-plugins-dependencies
-app/**/Pods/
-app/ios/Flutter/Generated.xcconfig
-app/android/local.properties
-app/android/.gradle/
+# Flutter / Dart
+.dart_tool/
+.packages
+.pub-cache/
+build/
+.flutter-plugins
+.flutter-plugins-dependencies
+
+# Flutter platform files
+**/Pods/
+**/Generated.xcconfig
+**/local.properties
+**/.gradle/
 
 # Secrets
 *.json.key
 service-account*.json
 firebase/.firebaserc
 .near-credentials/
+
+# macOS / Xcode
 .DS_Store
+DerivedData/
+*.xcuserstate
+
+# IDE
+.idea/
+*.iml
+.vscode/
+EOF
