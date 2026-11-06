@@ -1,0 +1,38 @@
+[debug] [2026-11-06T00:34:16.291Z] ----------------------------------------------------------------------
+[debug] [2026-11-06T00:34:16.294Z] Command:       /usr/local/Cellar/node@24/24.21.0/bin/node /usr/local/bin/firebase deploy --only hosting
+[debug] [2026-11-06T00:34:16.294Z] CLI Version:   15.34.1
+[debug] [2026-11-06T00:34:16.295Z] Platform:      darwin
+[debug] [2026-11-06T00:34:16.295Z] Node Version:  v24.21.0
+[debug] [2026-11-06T00:34:16.295Z] Detected Agent: unknown
+[debug] [2026-11-06T00:34:16.295Z] Time:          Fri Nov 06 2026 01:34:16 GMT+0100 (West Africa Time)
+[debug] [2026-11-06T00:34:16.295Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2026-11-06T00:34:18.474Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2026-11-06T00:34:18.474Z] > authorizing via signed-in user (gideonjones63@gmail.com)
+[debug] [2026-11-06T00:34:18.475Z] [iam] checking project usepurposemoney for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2026-11-06T00:34:18.502Z] Checked if tokens are valid: true, expires at: 1793928622575
+[debug] [2026-11-06T00:34:18.502Z] Checked if tokens are valid: true, expires at: 1793928622575
+[debug] [2026-11-06T00:34:18.504Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/usepurposemoney:testIamPermissions [none]
+[debug] [2026-11-06T00:34:18.504Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/usepurposemoney:testIamPermissions  x-goog-user-project=usepurposemoney
+[debug] [2026-11-06T00:34:18.504Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/usepurposemoney:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2026-11-06T00:34:20.193Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/usepurposemoney:testIamPermissions 200
+[debug] [2026-11-06T00:34:20.193Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/usepurposemoney:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2026-11-06T00:34:20.195Z] Checked if tokens are valid: true, expires at: 1793928622575
+[debug] [2026-11-06T00:34:20.195Z] Checked if tokens are valid: true, expires at: 1793928622575
+[debug] [2026-11-06T00:34:20.195Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/usepurposemoney [none]
+[debug] [2026-11-06T00:34:21.070Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/usepurposemoney 200
+[debug] [2026-11-06T00:34:21.071Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/usepurposemoney {"projectId":"usepurposemoney","projectNumber":"265908770386","displayName":"purposemoney","name":"projects/usepurposemoney","resources":{"hostingSite":"usepurposemoney"},"state":"ACTIVE","labels":{"firebase":"enabled"},"etag":"1_c9819db7-95bf-4858-8f0b-deaee1443579"}
+[debug] [2026-11-06T00:34:21.073Z] Specified "public" directory "public" does not exist; Deploy to Hosting site "usepurposemoney" may fail or be empty.
+[info] 
+[info] === Deploying to 'usepurposemoney'...
+[info] 
+[info] i  deploying hosting 
+[debug] [2026-11-06T00:34:21.076Z] Checked if tokens are valid: true, expires at: 1793928622575
+[debug] [2026-11-06T00:34:21.076Z] Checked if tokens are valid: true, expires at: 1793928622575
+[debug] [2026-11-06T00:34:21.077Z] >>> [apiv2][query] GET https://firebasehosting.googleapis.com/v1beta1/projects/usepurposemoney/sites/usepurposemoney [none]
+[debug] [2026-11-06T00:34:23.147Z] <<< [apiv2][status] GET https://firebasehosting.googleapis.com/v1beta1/projects/usepurposemoney/sites/usepurposemoney 200
+[debug] [2026-11-06T00:34:23.147Z] <<< [apiv2][body] GET https://firebasehosting.googleapis.com/v1beta1/projects/usepurposemoney/sites/usepurposemoney {"name":"projects/usepurposemoney/sites/usepurposemoney","defaultUrl":"https://usepurposemoney.web.app","type":"DEFAULT_SITE"}
+[debug] [2026-11-06T00:34:23.152Z] Checked if tokens are valid: true, expires at: 1793928622575
+[debug] [2026-11-06T00:34:23.152Z] Checked if tokens are valid: true, expires at: 1793928622575
+[debug] [2026-11-06T00:34:23.154Z] >>> [apiv2][query] POST https://firebasehosting.googleapis.com/v1beta1/projects/usepurposemoney/sites/usepurposemoney/versions [none]
+[debug] [2026-11-06T00:34:23.154Z] >>> [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/usepurposemoney/sites/usepurposemoney/versions {"status":"CREATED","labels":{"deployment-tool":"cli-firebase"}}
