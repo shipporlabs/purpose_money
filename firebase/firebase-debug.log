@@ -1,0 +1,18 @@
+[debug] [2026-11-06T01:22:34.759Z] ----------------------------------------------------------------------
+[debug] [2026-11-06T01:22:34.766Z] Command:       /usr/local/Cellar/node@24/24.21.0/bin/node /usr/local/bin/firebase deploy --only hosting
+[debug] [2026-11-06T01:22:34.767Z] CLI Version:   15.34.1
+[debug] [2026-11-06T01:22:34.767Z] Platform:      darwin
+[debug] [2026-11-06T01:22:34.767Z] Node Version:  v24.21.0
+[debug] [2026-11-06T01:22:34.767Z] Detected Agent: unknown
+[debug] [2026-11-06T01:22:34.767Z] Time:          Fri Nov 06 2026 02:22:34 GMT+0100 (West Africa Time)
+[debug] [2026-11-06T01:22:34.768Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2026-11-06T01:22:37.390Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2026-11-06T01:22:37.390Z] > authorizing via signed-in user (gideonjones63@gmail.com)
+[debug] [2026-11-06T01:22:37.390Z] [iam] checking project usepurposemoney for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2026-11-06T01:22:37.414Z] Checked if tokens are valid: false, expires at: 1793928622575
+[debug] [2026-11-06T01:22:37.414Z] Checked if tokens are valid: false, expires at: 1793928622575
+[debug] [2026-11-06T01:22:37.414Z] > refreshing access token with scopes: []
+[debug] [2026-11-06T01:22:37.418Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2026-11-06T01:22:37.418Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2026-11-06T01:22:39.157Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 200
