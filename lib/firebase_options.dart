@@ -17,10 +17,7 @@ import 'package:flutter/foundation.dart'
 class DefaultFirebaseOptions {
   static FirebaseOptions get currentPlatform {
     if (kIsWeb) {
-      throw UnsupportedError(
-        'DefaultFirebaseOptions have not been configured for web - '
-        'you can reconfigure this by running the FlutterFire CLI again.',
-      );
+      return web;
     }
     switch (defaultTargetPlatform) {
       case TargetPlatform.android:
@@ -50,7 +47,6 @@ class DefaultFirebaseOptions {
     projectId: 'usepurposemoney',
     storageBucket: 'usepurposemoney.firebasestorage.app',
   );
-
   static const FirebaseOptions ios = FirebaseOptions(
     apiKey: 'AIzaSyBRQe7XUDw9E10hv3NvK795UAoUC82dE0o',
     appId: '1:265908770386:ios:31145cbfb96e67c0a8718b',
@@ -59,7 +55,6 @@ class DefaultFirebaseOptions {
     storageBucket: 'usepurposemoney.firebasestorage.app',
     iosBundleId: 'com.example.purposeMoney',
   );
-
   static const FirebaseOptions macos = FirebaseOptions(
     apiKey: 'AIzaSyBRQe7XUDw9E10hv3NvK795UAoUC82dE0o',
     appId: '1:265908770386:ios:31145cbfb96e67c0a8718b',
@@ -70,6 +65,14 @@ class DefaultFirebaseOptions {
   );
 
   static const FirebaseOptions windows = FirebaseOptions(
+    apiKey: 'AIzaSyDklC5SRr-rxtAv1AMYHrClr9RPalUC1wA',
+    appId: '1:265908770386:web:0bdeca2b7beb1dc8a8718b',
+    messagingSenderId: '265908770386',
+    projectId: 'usepurposemoney',
+    authDomain: 'usepurposemoney.firebaseapp.com',
+    storageBucket: 'usepurposemoney.firebasestorage.app',
+  );
+  static const FirebaseOptions web = FirebaseOptions(
     apiKey: 'AIzaSyDklC5SRr-rxtAv1AMYHrClr9RPalUC1wA',
     appId: '1:265908770386:web:0bdeca2b7beb1dc8a8718b',
     messagingSenderId: '265908770386',
